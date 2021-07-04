@@ -16,15 +16,15 @@
 
       #gallery {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
       }
 
-      .gallery__item:not(:last-child) {
-        margin-bottom: 20px;
-      }
-
-      .gallery__image {
-        width: 640px;
+      .gallery-list__item img {
+        max-width: 50vw;
+        height: auto;
+        margin-bottom: 15px;
       }
     </style>
   </head>

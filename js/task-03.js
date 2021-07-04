@@ -13,15 +13,22 @@ const images = [
   },
 ];
 
-const galleryListEl = document.querySelector('#gallery');
+const galleryRef = document.querySelector('#gallery');
+galleryRef.classList.add('gallery-list');
 
-console.log(galleryListEl);
-const galleryItems = images.map(({ url, alt }) => {
-  const galleryItem = `<li class="gallery__item">
-        <img src ="${url}" alt="${alt}" class ="gallery__image"/>
-    </li>`;
+function ceateElement(arr) {
+  const imagesAsLi = arr.map(item => {
+    const imageAsListItem = document.createElement('li');
+    imageAsListItem.insertAdjacentHTML(
+      'beforeend',
+      `<img src="${item.url}" alt="${item.alt}">`
+    );
+    imageAsListItem.setAttribute('class', 'gallery-list__item');
 
-  return galleryItem;
-});
+    return imageAsListItem;
+  });
 
-galleryListEl.insertAdjacentHTML('afterbegin', galleryItems.join(' '));
+  return gallery.append(...imagesAsLi);
+}
+
+console.log(ceateElement(images));
