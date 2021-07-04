@@ -17,11 +17,10 @@ const galleryListEl = document.querySelector('#gallery');
 
 console.log(galleryListEl);
 const galleryItems = images.map(({ url, alt }) => {
-  const galleryItem =
-    `<li class="gallery__item">
+  const galleryItem = `<li class="gallery__item">
         <img src ="${url}" alt="${alt}" class ="gallery__image"/>
     </li>`;
-  
+
   return galleryItem;
 });
 

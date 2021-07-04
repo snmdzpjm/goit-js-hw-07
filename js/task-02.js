@@ -1,4 +1,4 @@
-  const ingredients = [
+const ingredients = [
   'Картошка',
   'Грибы',
   'Чеснок',
@@ -12,7 +12,6 @@ const listContainer = document.querySelector('#ingredients');
 const ListItems = items => {
   const elem = document.createElement(`li`);
   elem.textContent = items;
-
 
   return elem;
 };

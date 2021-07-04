@@ -1,21 +1,20 @@
-const currentValueRef = document.querySelector('#value');
 const decrementBtnRef = document.querySelector(
-  'button[data-action="decrement"]',
+  '#counter button[data-action="decrement"]'
 );
 const incrementBtnRef = document.querySelector(
-  'button[data-action="increment"]',
+  '#counter button[data-action="increment"]'
 );
+const value = document.querySelector('#value');
+
 let counterValue = 0;
 
-function onDecrementBtnRefClick() {
-  counterValue -= 1;
-  currentValueRef.textContent = counterValue;
+function decrement() {
+  value.textContent = counterValue -= 1;
 }
 
-function onIncrementBtnRefClick() {
-  counterValue += 1;
-  currentValueRef.textContent = counterValue;
+function increment() {
+  value.textContent = counterValue += 1;
 }
 
-incrementBtnRef.addEventListener('click', onIncrementBtnRefClick);
-decrementBtnRef.addEventListener('click', onDecrementBtnRefClick);
+incrementBtnRef.addEventListener('click', increment);
+decrementBtnRef.addEventListener('click', decrement);
