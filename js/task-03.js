@@ -14,21 +14,15 @@ const images = [
 ];
 
 const galleryRef = document.querySelector('#gallery');
-galleryRef.classList.add('gallery-list');
+galleryRef.classList.add('gallery');
 
-function ceateElement(arr) {
-  const imagesAsLi = arr.map(item => {
-    const imageAsListItem = document.createElement('li');
-    imageAsListItem.insertAdjacentHTML(
-      'beforeend',
-      `<img src="${item.url}" alt="${item.alt}">`
-    );
-    imageAsListItem.setAttribute('class', 'gallery-list__item');
+const imageAsListItem = ({ url, alt }) => {
+  return `<li class="gallery__item">
+    <img src="${url}" alt="${alt}" class="img">
+  </li>`;
+};
 
-    return imageAsListItem;
-  });
+const imagesRef = images.map(imageAsListItem).join('  ');
+galleryRef.insertAdjacentHTML('afterbegin', imagesRef);
 
-  return gallery.append(...imagesAsLi);
-}
-
-console.log(ceateElement(images));
+console.log(galleryRef);
